@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<style>
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+   }
+
+   :root{
+    --bg-color:rgb(0, 0, 0);
+    --snd-bf-color:rgb(2, 2, 2);
+    --text-color:rgb(110, 231, 225);
+    --main-color:rgb(10, 173, 223);
+   }
+
+   html{
+    font-size: 62.5%;
+    height: -webkit-fill-available;
+    scroll-behavior: smooth;
+    
+   }   
+
+   body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+   }
+
+   section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rems;
+   }
+
+   .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+   }
+
+   .logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+   }
+
+   .navbar a{
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 400;
+   }
+   .navbar a:hover{
+    border-bottom: 2px solid aqua;
+   }
+
+   .navbar a:hover,
+   .navbar a.active{
+    color: var(--text-color)
+   }
+
+   #menu-icon{
+    font-size: 3ren;
+    color:var(--text-color);
+    display: none;
+    cursor: pointer;
+   }
+
+ .home{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   }
+   
+   h3{
+    font-size: 4rem;
+   }
+
+   h4{
+    font-size: 3rem;
+   }
+
+   .home-content h2{
+     font-size: 3.2rem;
+     font-weight: 700;
+     margin-bottom: 15px;
+   }
+
+   .home-content h2:nth-of-type(2){
+       margin-bottom: 4rem;
+   }
+    
+   span{
+    color: var(--main-color);
+   }
+
+  .home-content h2{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+   }
+
+.home-image img{
+  width: 25vw;
+  animation: floatimage 4s ease-in-out infinite;
+  border-radius: 50%;
+  align-items: right;
+   box-shadow: 0 0 55px rgb(103, 224, 214);
+}
+
+
+@keyframes floatimage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.float {
+  
+  animation: floatimage 3s ease-in-out infinite;
+}
+
+.home-content{
+  font-size: 1.6rem;
+}
+
+.home-content h2{
+  text-transform: uppercase;
+  background: linear-gradient(to right,#fc72ff,#8f68ff,#487bff,#8f68ff,#fc72ff);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+.home-content h4{
+  background: linear-gradient(90deg,#0ef3ba,#1af5ea,#e9f81a);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+
+/* ABOUT SECTION */
+.about{
+    display:flex;
+    flex: 1;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    padding:100px 10%;
+    background:var(--bg-color);
+    min-height:100vh;
+}
+
+/* Image Side */
+.about-image{
+    align-items: center;
+    display:flex;
+    justify-content:center;
+    opacity:0;
+    animation: slideLeft 1.5s ease forwards;
+}
+
+.wrapper-border{
+  padding:8px;
+  border-radius:20px;
+  background: linear-gradient(45deg,#8d2ce7,#0e6fee,#fd438a,#faf606,#0ffafa,#fa3cd1);
+  background-size:400% 400%;
+  animation: gradientBorder 6s linear infinite;
+
+ width: 520px;
+}
+
+.wrapper-border img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:15px;
+  object-fit:cover;
+}
+
+@keyframes gradientBorder{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Content Side */
+.about-content{
+    flex:1;
+    opacity:0;
+    animation: slideRight 1.5s ease forwards;
+}
+
+.heading{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.heading span{
+    color:#1edada;
+}
+
+.about-content p{
+    font-size:16px;
+    line-height:1.7;
+    color:#35d6d6;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 25px;
+    background:#0072ff;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0056cc;
+}
+
+/* Animations */
+@keyframes slideLeft{
+    from{
+        transform:translateX(-100px);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+
+@keyframes slideRight{
+    from{
+        transform:translateX(100px);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+
+
+/* art section */
+.carousel-main{
+  padding-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  background-color: black;
+   min-height: auto;   /* 🔥 override 100vh */
+  padding: 9rem 0 100px;
+}
+
+.carousel {
+  position: relative;
+  width: 200px;
+  height: 270px;
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+  margin-top: 80px;
+}
+
+.carousel img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 50px rgb(5, 245, 153);
+  transition: transform 1s;
+}
+
+/* Positioning images in 3D circle */
+.carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+.carousel img:nth-child(2) { transform: rotateY(60deg) translateZ(400px); }
+.carousel img:nth-child(3) { transform: rotateY(120deg) translateZ(400px);}
+.carousel img:nth-child(4) { transform: rotateY(180deg) translateZ(400px);}
+.carousel img:nth-child(5) { transform: rotateY(240deg) translateZ(400px);}
+.carousel img:nth-child(6) { transform: rotateY(300deg) translateZ(400px);}
+
+@keyframes rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.moreview{
+  font-size: 2rem;
+}
+
+
+
+/* image gallery*/
+.gallery-section {
+    text-align: center;
+    padding: 50px 20px;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 10px; 
+  }
+
+  .gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+
+  /* Make all images same size */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: none;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 160px; /* fixed height */
+    object-fit: cover; /* crop to fit */
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    box-shadow: 0 0 10px rgb(97, 211, 186);
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgb(3, 245, 192);
+  }
+
+  .btn-view {
+    padding: 12px 30px;
+    background: #ff5722;
+    color:#fff;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:16px;
+    transition: background 0.3s;
+  }
+
+  .btn-view:hover {
+    background:#e64a19;
+    box-shadow: 0 0 15px rgb(12, 234, 250);
+  }
+
+  /* Lightbox with ripple */
+  .lightbox {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    visibility:hidden;
+    opacity:0;
+    overflow:hidden;
+    z-index:999;
+  }
+
+  .lightbox.active {
+    visibility: visible;
+    opacity:1;
+  }
+
+  /* Ripple background */
+  .ripple-bg {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#2ddaa0;
+    border-radius:0;
+    transform: scale(0);
+    opacity:0;
+    animation: ripple-bg-animation 0.4s forwards;
+    z-index:1;
+  }
+
+  @keyframes ripple-bg-animation {
+    0% { transform: scale(0); opacity:0; }
+    100% { transform: scale(1); opacity:0.8; }
+  }
+
+  .lightbox img {
+    max-width:90%;
+    max-height:80%;
+    border-radius:8px;
+    cursor:pointer;
+    position: relative;
+    z-index:2;
+    box-shadow: 0 0 50px rgba(253, 237, 10, 0.5);
+    transition: transform 0.3s;
+  }
+
+
+/* Contact */
+
+.contact {
+  padding: 8rem 9% 4rem;
+}
+
+.contact .heading {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  color: aquamarine;
+  text-align: center;
+}
+
+.contact form{
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact form .input-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: rgb(8, 238, 219);
+  background-color: rgb(47, 48, 49);
+  border: 2px solid aquamarine;
+  box-shadow: 0 0 15px aquamarine;
+  border-radius: 0.8rem;
+  margin: 2rem 0;
+}
+
+.contact form .input-box input{
+  width: 49%;
+}
+
+.contact form textarea{
+  resize: none;
+}
+
+.contact form .btn{
+     margin-bottom: 1rem;
+     cursor: pointer;
+     padding: 5px;
+     color: #ff5722;
+     background: aqua;
+     border-radius: 10px;
+     text-align: center;
+}
+
+ .eduall{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+/*education*/
+        .edu{
+          padding-top: 90px;
+        }
+
+        .flip-card{
+            width: 250px;
+            height: 250px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner{
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            color: aqua;
+        }
+
+        .flip-card-front{
+            background: linear-gradient(45deg,#00FFFF,#007BFF);
+        }
+
+        .flip-card-back{
+            background: #3582e7;
+            transform: rotateY(180deg);
+        }
+
+         .flip-card-back p{
+          font-size: 1.5rem;
+         }
+
+         .flip-card-front h2{
+            color: #ee790c;
+            font-size: 2rem;
+         }
+
+         .flip-card-back h4{
+  background: linear-gradient(to right,#f50e81,#f8910b,#38ec6e,#eee23f,#fc72ff);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+
+
+@media (max-width: 600px)
+{
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:black;
+}
+
+  html{
+    font-size: 55%;
+    overflow-x: hidden;
+  overflow-y: auto;
+  }
+
+  .about {
+  overflow: visible;
+}
+
+  #menu-icon{
+    display: block;
+    font-size:3rem;
+    cursor: pointer;
+  }
+
+  .navbar{
+    display: none;
+  }
+
+  .navbar.active{
+     display: block;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     width: 100%;
+     background: var(--bg-color);
+     padding:2rem 0;
+  }
+
+  .navbar a{
+     display: block;
+     text-align: center;
+     margin: 2rem 0;
+     font-size: 2rem;
+  }
+
+  .home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content{
+    margin-top: 15%;
+    margin-bottom: 5px;
+  }
+
+  .home-image img{
+    width: 60vw;
+    align-items: center;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 5%;
+    gap: 20px;
+  }
+
+ 
+
+  .about-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-content .heading {
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+  }
+
+  .wrapcontent {
+    max-width: 100%;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .about-content p {
+    max-width: 100%;
+  }
+
+
+
+  .carousel-main{
+    perspective: 1800px;
+    padding-top: 200px;
+  }
+
+  .carousel{
+    width: 180px;
+    height: 250px;
+  }
+
+  .carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }
+.carousel img:nth-child(2) { transform: rotateY(60deg) translateZ(220px); }
+.carousel img:nth-child(3) { transform: rotateY(120deg) translateZ(220px);}
+.carousel img:nth-child(4) { transform: rotateY(180deg) translateZ(220px);}
+.carousel img:nth-child(5) { transform: rotateY(240deg) translateZ(220px);}
+.carousel img:nth-child(6) { transform: rotateY(300deg) translateZ(220px);}
+
+}
+
+ .wrapper-border{
+    width: 280px;
+    padding:6px;
+  }
+
+
+</style>
+
+
+<body>
+  <!---home section--->
+    <header class="header">
+       <a href="#" class="logo">Portfolio</a>
+
+       <i class="fa-solid fa-bars" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About me</a>
+        <a href="#edu">Education</a>
+        <a href="#drawings">Arts</a>
+        <a href="#contact">contact</a>
+      </nav>
+  </header>
+
+   <section class="home" id="home">
+     <div class="home-content">
+       <h3>Hello.. I'm</h3>
+       <h2>Sayiprasad Acharya</h2>
+       <h4>Hand-Drawn <span> Pencil sketch Artist</span></h4>      
+      </div>
+      <div class="home-image">
+        <img class="float" src="prasad2.jpg" alt="my Image" >
+      </div>
+      </section>
+
+      <!---About section--->
+      <section class="about" id="about">
+        <div class="about-image">
+          <div class="wrapper-border">
+            <img src="prasad1.jpg" alt="My Photo">
+
+        </div>
+        </div>
+
+        <div class="about-content">
+          <h2 class="heading">About<span>Me</span></h2>
+          <div class="wrapcontent">
+          <p>Hi, I'm Sayiprasad Acharya. 2nd year BCA Student
+             at SDM Degree College Ujire. I'm pencil sketch artist and web designer.
+             and I specialize in HTML, CSS and Javascript and modern Web animations.
+             I love Creating creative, interactive and visually attractive websites and 
+             I enjoy creating realistic pencil artworks. 
+             and My Hobbies are drawing, play Cricket, video editing, collect old coins, 
+             hearing musics.
+             </p>
+          </div>
+          <a href="#home" class="btn">Read more</a>
+        </div>
+      </section>
+
+      <!---Educations-->
+    <section id="edu" class="edu">
+        <div class="eduall">
+       
+        <!---sslc-->
+        <div class="flip-card">
+        <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <h2>SSLC</h2>
+        </div>
+
+        <div class="flip-card-back">
+            <h4>SSLC Details</h4>
+            <p>School : Govt High School Nidle</p>
+            <p>Year   : 2022</p>
+            <p>Percentage: 81%</p>
+        </div>
+        </div> 
+        </div> 
+
+<!----puc-->
+ <div class="flip-card">
+        <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <h2>PUC</h2>
+        </div>
+
+        <div class="flip-card-back">
+            <h4>PUC Details</h4>
+            <p>College : SDM PU college Ujire</p>
+            <p>Year   : 2024</p>
+            <p>percentage : 77%</p>
+            <p>Combination: PCMC</p>
+        </div>
+        </div> 
+        </div>
+
+<!----degree-->
+         <div class="flip-card">
+        <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <h2>Degree</h2>
+        </div>
+
+        <div class="flip-card-back">
+            <h4>Degree Details</h4>
+            <p>College : SDM Degree college Ujire</p>
+            <p>Year   : 2025</p>
+            <p>Combination: BCA</p>
+        </div>
+        </div> 
+        </div>
+
+        </div>
+    </section>
+
+
+     <!---art section---> 
+     <section id="drawings" class="carousel-main">
+      <div class="carousel">
+        <img src="img6.jpg" alt="SAI_ARTS">
+        <img src="img9.jpg" alt="SAI_ARTS">
+        <img src="img4.jpg"  alt="SAI_ARTS">
+        <img src="img3.jpg" alt="SAI_ARTS">
+        <img src="img2.jpg" alt="SAI_ARTS">
+        <img src="img10.jpg" alt="SAI_ARTS">
+       </div>
+        </section>
+
+        <section class="gallery-section">
+        <button class="btn-view" id="viewMoreBtn">View More</button>
+        <div class="gallery" id="gallery">
+        <img src="">
+        <img src="img1.jpg" alt="SAI_ARTS">
+        <img src="img2.jpg" alt="SAI_ARTS">
+        <img src="img3.jpg" alt="SAI_ARTS">
+        <img src="img4.jpg" alt="SAI_ARTS">
+        <img src="img5.jpg" alt="SAI_ARTS">
+        <img src="img6.jpg" alt="SAI_ARTS">
+        <img src="img7.jpg" alt="SAI_ARTS">
+        <img src="img8.jpg" alt="SAI_ARTS">
+        <img src="img9.jpg" alt="SAI_ARTS">
+        <img src="img10.jpg" alt="SAI_ARTS">
+        </div>
+         </section>
+         <div class="lightbox" id="lightbox"></div>
+       
+    <div class="images" id="more">
+    </div>
+
+
+    <!----contact-->
+     <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" placeholder="Full nmae">
+          <input type="email" placeholder="Email Address">
+        </div>
+
+        <div class="input-box">
+          <input type="number" placeholder="Phone number">
+          <input type="text"  placeholder="subject">
+        </div>
+        <textarea id="" class="" cols="21" rows="7" placeholder="your messege"></textarea>
+        <input type="submit" value="send Messege" class="btn">
+      </form>
+    </section>
+
+    <!----java script-->
+ <script>
+  const menuIcon = document.getElementById("menu-icon");
+  const navbar = document.querySelector(".navbar");
+
+  menuIcon.onclick = () => {
+    navbar.classList.toggle("active");
+  };
+
+  slides.forEach(slide => {
+  slide.addEventListener("click", () => {
+    slides.forEach(s => s.classList.remove("active"));
+    slide.classList.add("active");
+    slide.scrollIntoView({ behavior: "smooth", inline: "center" });
+  });
+});
+
+</script>
+
+<script>
+  const viewBtn = document.getElementById('viewMoreBtn');
+  const gallery = document.getElementById('gallery');
+  const lightbox = document.getElementById('lightbox');
+
+  // Show gallery
+  viewBtn.addEventListener('click', () => {
+    gallery.style.display = 'grid';
+    viewBtn.style.display = 'none';
+  });
+
+  // Open lightbox with ripple background
+  gallery.querySelectorAll('img').forEach(img => {
+    img.addEventListener('click', e => {
+      // Clear previous content
+      lightbox.innerHTML = '';
+
+      // Create ripple background
+      const rippleBg = document.createElement('div');
+      rippleBg.className = 'ripple-bg';
+      lightbox.appendChild(rippleBg);
+
+      // Create image
+      const imgElem = document.createElement('img');
+      imgElem.src = img.src;
+      imgElem.alt = img.alt;
+      lightbox.appendChild(imgElem);
+
+      lightbox.classList.add('active');
+    });
+  });
+
+  // Close lightbox on click
+  lightbox.addEventListener('click', e => {
+    if (e.target.tagName === 'IMG' || e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>
